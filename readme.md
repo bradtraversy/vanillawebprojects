@@ -1,8 +1,8 @@
-# 20+ Vanilla JavaScript Projects
+# 20+ Web Projects With Vanilla JavaScript
 
-This is the main repository for all of the projects in the Udemy course.
+This is the main repository for all of the projects in the course.
 
-- [Udemy Course]()
+- [Course Link]()
 - [Course Info Website](http://vanillawebprojects.com)
 
 |  #  |            Project             | Live Demo |
