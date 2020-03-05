@@ -27,3 +27,6 @@ This is the main repository for all of the projects in the course.
 | 18  |     [New Year Countdown](https://github.com/bradtraversy/vanillawebprojects/tree/master/new-year-countdown)   | [Live Demo](https://vanillawebprojects.com/projects/new-year-countdown/)  |
 | 19  |       [Sortable List](https://github.com/bradtraversy/vanillawebprojects/tree/master/sortable-list)       | [Live Demo](https://vanillawebprojects.com/projects/sortable-list/)  |
 | 20  | [Speak Number Guessing Game](https://github.com/bradtraversy/vanillawebprojects/tree/master/speak-number-guess) | [Live Demo](https://vanillawebprojects.com/projects/speak-number-guess/)  |
+
+
+NOTE ON PULL REQUESTS: All of these projects are part of the course. While I do appreciate people trying to make some things prettier, we are only accepting pull requests and looking at issues for bug fixes.
