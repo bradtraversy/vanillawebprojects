@@ -29,7 +29,7 @@ nav {
   top: 0;
   left: 0;
   width: 200px;
-  height: 100vh;
+  height: 100%;
   z-index: 100;
   transform: translateX(-100%);
 }
