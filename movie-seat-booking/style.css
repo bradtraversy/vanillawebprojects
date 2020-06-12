@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: #242333;
-  color: #fff;
+  background-color: #0e1a5a;
+  color: rgb(245, 227, 227);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@ body {
 }
 
 .movie-container select {
-  background-color: #fff;
+  background-color: rgba(204, 224, 224, 0.89);
   border: 0;
   border-radius: 5px;
   font-size: 14px;
@@ -38,28 +38,28 @@ body {
 }
 
 .seat {
-  background-color: #444451;
-  height: 12px;
+  background-color: #d6dbcc;
+  height: 15px;
   width: 15px;
-  margin: 3px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  margin: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .seat.selected {
-  background-color: #6feaf6;
+  background-color: #14da4f;
 }
 
 .seat.occupied {
-  background-color: #fff;
+  background-color: rgb(235, 20, 20);
 }
 
 .seat:nth-of-type(2) {
-  margin-right: 18px;
+  margin-right: 20px;
 }
 
 .seat:nth-last-of-type(2) {
-  margin-left: 18px;
+  margin-left: 20px;
 }
 
 .seat:not(.occupied):hover {
@@ -76,7 +76,7 @@ body {
   background: rgba(0, 0, 0, 0.1);
   padding: 5px 10px;
   border-radius: 5px;
-  color: #777;
+  color: rgb(201, 141, 30);
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -98,7 +98,7 @@ body {
 }
 
 .screen {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   height: 70px;
   width: 100%;
   margin: 15px 0;
@@ -111,5 +111,9 @@ p.text {
 }
 
 p.text span {
-  color: #6feaf6;
+  color: #09f7e3;
+}
+
+.btn.btn-success{
+  background-color: #17be2e;
 }
