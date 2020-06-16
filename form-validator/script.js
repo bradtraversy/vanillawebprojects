@@ -32,7 +32,11 @@ function checkEmail(input) {
 function checkRequired(inputArr) {
   inputArr.forEach(function(input) {
     if (input.value.trim() === '') {
-      showError(input, `${getFieldName(input)} is required`);
+      if(input.id == 'password2') {
+        showError(input, `Password confirmation is required`);
+      }else{
+        showError(input, `${getFieldName(input)} is required`)
+      }
     } else {
       showSuccess(input);
     }
