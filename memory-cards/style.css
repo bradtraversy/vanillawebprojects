@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #4A154B;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,12 +17,18 @@ body {
 }
 
 h1 {
+  font-size: 80px;
   position: relative;
+  font-family: cursive;
+  /* color: #FFB500; */
+  color: #5BB381;
 }
 
 h1 button {
   position: absolute;
-  right: 0;
+  /* right: 0; */
+  bottom: 60px;
+  left: 400px;
   transform: translate(120%, -50%);
   z-index: 2;
 }
@@ -38,8 +44,11 @@ h1 button {
 }
 
 .btn-small {
-  font-size: 12px;
-  padding: 5px 10px;
+  font-size: 15px;
+  padding: 8px 10px;
+  /* background-color: #64C3EB; */
+  background-color: #5BB381;
+  color:white;
 }
 
 .btn-ghost {
@@ -48,11 +57,32 @@ h1 button {
 }
 
 .clear {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
+  display: flex;
+  flex-direction: column;
+  
+  /* justify-content: center; */
+  align-self: center;
+  align-items: center;
+  /* align-content: inherit; */
+  /* position: absolute; */
+  /* bottom: 60px; */
+  /* left: 320px; */
+  color:white;
+  background-color: #5BB381;
 }
 
+/* .add {
+  position: absolute;
+  bottom: 60px;
+  left: 300px;
+  color:white;
+  background-color:#FFB500;
+} */
+
+
+.show {
+  left: 300px;
+}
 .cards {
   perspective: 1000px;
   position: relative;
@@ -71,6 +101,7 @@ h1 button {
   width: 100%;
   transform: translateX(50%) rotateY(-10deg);
   transition: transform 0.4s ease, opacity 0.4s ease;
+  /* color: #283350; */
 }
 
 .card.active {
@@ -78,6 +109,7 @@ h1 button {
   opacity: 1;
   z-index: 10;
   transform: translateX(0) rotateY(0deg);
+
 }
 
 .card.left {
@@ -92,6 +124,7 @@ h1 button {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.4s ease;
+  color: #283350;
 }
 
 .card.show-answer .inner-card {
@@ -130,12 +163,14 @@ h1 button {
   right: 10px;
   font-weight: bold;
   font-size: 16px;
-  color: #ddd;
+  color:  #5BB381;
 }
 
 .navigation {
   display: flex;
   margin: 20px 0;
+  color: #5BB381;
+
 }
 
 .navigation .nav-button {
