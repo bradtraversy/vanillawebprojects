@@ -54,6 +54,7 @@ h1 button {
 .btn-ghost {
   border: 0;
   background-color: transparent;
+  color: #5BB381;
 }
 
 .clear {
