@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #0085dd;
+    color: #ffffff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+}
+:root {
+    --background-color:#545454;
+}
+.btn {
+    outline: none;
+    border: 1px solid #535353;
+    color: #f2f3f4;
+    background: #686868;
+    padding: 8px 12px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover,.btn:active {
+    background-color: #676767;
+    color: #f5f6f7;
+    border-color: #686868;
+}
+.show-rule-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.rules {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
+}
+.rules > .left {
+    max-width: 300px;
+    padding: 20px;
+    height: 100%;
+    background-color: var(--background-color);
+}
+.rules > .left > h2 {
+    margin: .35em 0;
+    letter-spacing: 1px;
+}
+.rules > .left > p {
+    line-height: 1.5;
+    margin: 1em 0;
+}
+canvas {
+    background-color: #ffffff;
+    border-radius: 6px;
+    display: block;
+}
+h1 {
+    margin: 20px 0;
+}

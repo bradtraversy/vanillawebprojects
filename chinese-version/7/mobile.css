@@ -1,0 +1,38 @@
+#keyboard {
+    display: none;
+}
+
+#keyboard .keyboard-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 80px;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 10px #dedede;
+    transition: display .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: none;
+}
+#keyboard .keyboard-container:after {
+    content:"";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+#keyboard .keyboard-container button {
+    width: 25px;
+    height: 25px;
+    border:1px solid #535353;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 25px;
+    font-size: 12px;
+    border-radius: 5px;
+    float: left;
+    margin: 4px;
+}
+
+#keyboard .keyboard-container button:active {
+    border-color:#2396ef;
+}

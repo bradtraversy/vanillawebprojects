@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <title>打字游戏</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <button id="setting-btn" type="button" class="setting-btn">
+        <i class="fas fa-cog"></i>
+    </button>
+    <div id="setting" class="setting">
+        <form>
+            <div>
+                <label>游戏难易程度:</label>
+                <div class="select-container select-hard">
+                    <div class="select-title">
+                        <div class="select-content" tabindex="0" hidefocus="true"></div>
+                        <i class="select-icon select-down"></i>
+                    </div>
+                    <ul class="select-items"></ul>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h2>👩‍💻 速度打字机 👨‍💻</h2>
+        <small>键入如下的单词:</small>
+        <h1 id="word">juice</h1>
+        <input type="text" class="text" id="text" placeholder="请输入示例单词">
+        <p class="time-container">
+            剩余时间:
+            <span id="time">0s</span>
+        </p>
+        <p class="score-container">
+            得分:
+            <span id="score">0分</span>
+        </p>
+    </div>
+</body>
+<script src="plugins/popbox.js"></script>
+<script src="plugins/message.js"></script>
+<script src="index.js"></script>
+
+</html>

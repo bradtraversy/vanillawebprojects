@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆卡片</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="btn-group">
+        <button id="clear-cards" class="clear-cards-btn btn" type="button">清除所有卡片</button>
+        <button id="delete-select-card" class="delete-cards-btn btn" type="button">删除所选卡片</button>
+    </div>
+    <h1>
+        记忆卡片
+        <button class="btn add-cards-btn btn-small" id="add-cards-btn" type="button">
+            <i class="fas fa-plus"></i>
+            添加新卡片
+        </button>
+    </h1>
+    
+    <div id="cards-container" class="cards-container">
+        <!-- <div class="card active show-card-content">
+            <span class="number">1</span>
+            <button class="btn-none check-card-btn" id="check-card-btn" type="button">
+                <i class="checked-icon"></i>
+            </button>
+            <div class="inner-card">
+                <div class="inner-card-front">
+                    <p>什么是JavaScript?</p>
+                </div>
+                <div class="inner-card-back">
+                    <p>javascript是一种开发web页面的脚本语言。</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="navigation">
+        <button id="prev" class="btn-none" type="button">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <p id="current">1/1</p>
+        <button id="next" class="btn-none" type="button">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+    <div class="add-card-container" id="add-card-container">
+        <h1>
+            添加新卡片
+            <span class="close-addCards-btn" id="close-addCards-btn">&times;</span>
+        </h1>
+        <form class="add-new-card-form">
+            <div>
+                <label>卡片标题:</label>
+                <input type="text" class="ew-input" id="card-title">
+            </div>
+            <div>
+                <label>卡片内容:</label>
+                <textarea class="ew-textarea" id="card-content"></textarea>
+            </div>
+            <div>
+                <button class="btn add-new-card-btn" type="button" id="add-new-card-btn">
+                    <i class="fas fa-plus"></i>
+                    添加
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="plugins/message.js"></script>
+<script src="index.js"></script>
+
+</html>

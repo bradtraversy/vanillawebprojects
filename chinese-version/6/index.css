@@ -1,0 +1,213 @@
+/*
+* 页面样式
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+:root {
+  --primary-color: #2396ef;
+  --background-color: #1777c0;
+}
+button,
+input {
+  border: none;
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+.nav.show-nav {
+  transform: translateX(0);
+}
+.nav {
+  width: 200px;
+  height: 100vh;
+  background-color: var(--primary-color);
+  border-right: 2px solid rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+.nav .logo {
+  padding: 30px 0;
+  text-align: center;
+}
+.nav .logo img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+}
+.nav .logo img:hover {
+  transform: rotate(-180deg);
+}
+
+.nav .nav-ul li {
+  padding: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+.nav .nav-ul li a {
+  color: #ffffff;
+  letter-spacing: 3px;
+  font-size: 18px;
+  font-family: "幼圆", "楷体";
+  padding-bottom: 8px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav .nav-ul li a:hover {
+  text-decoration: underline wavy #f1d2d8;
+}
+
+.main {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #f4f5f6;
+  transition: all 0.1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+.header {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--primary-color);
+  font-size: 130%;
+  color: #ffffff;
+  position: relative;
+}
+.header .toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 12px;
+}
+.header .toggle .menu {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.header .toggle .menu .menu-line {
+  width: 100%;
+  height: 5px;
+  background-color: #ffffff;
+  margin: 4px 0;
+  display: block;
+}
+.header .toggle:hover .menu-line {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.header h1 {
+  letter-spacing: 2px;
+  font-family: "华文琥珀";
+  margin-bottom: 10px;
+}
+.header p {
+  margin: 30px 0;
+  letter-spacing: 2px;
+}
+.header .register {
+  background-color: var(--background-color);
+  padding: 8px 18px;
+  font-size: 20px;
+  letter-spacing: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+}
+.header .register:hover,
+.header .register:active {
+  background-color: #054474;
+}
+.main .content {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.main .container {
+  padding: 10px;
+  max-width: 100%;
+  width: 800px;
+  margin: 0 auto;
+}
+.main .container hr {
+  margin: 1em 0;
+}
+.main .container h2 {
+  counter-increment: first-title;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #535353;
+  margin-bottom: 15px;
+}
+.main .container h2:before {
+  content: counter(first-title, simp-chinese-informal) ".";
+}
+
+.main .container article#poem p {
+  margin: 0.4em 0;
+}
+
+.main .container p {
+  line-height: 25px;
+  margin: 1em 0;
+}
+.main .container a {
+  color: #2396ef;
+  cursor: alias;
+}
+.main .container a:hover,
+.main .container a:active {
+  text-decoration: underline wavy #2396ef;
+}
+.main .container ul li {
+  counter-increment: order;
+}
+.main .container ul li:before {
+  content: counter(order) ".";
+  color: #535353;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ew-popBox-mask .modal-form {
+    width: 350px;
+}
+
+.ew-popBox-mask .modal-form div{
+    margin: 15px 0;
+}
+
+.ew-popBox-mask .modal-form div label {
+    display: block;
+    margin-bottom: 5px;
+    color: #535353;
+}
+
+.ew-popBox-mask .modal-form div input {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #f2f3f4;
+    padding: 10px 12px;
+    font-size: 16px;
+    color: #535353;
+}
+
+.ew-popBox-mask .ew-popBox-btnGroup button {
+    letter-spacing: 2px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>音乐播放器</h1>
+    <div class="music-container" id="music-container">
+        <div class="music-info">
+            <h4 id="title">他不是真的爱我-白小白</h4>
+            <p id="music-time">00:00</p>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <audio src="https://www.eveningwater.com/static/resouces/audio/1.mp3" id="audio"></audio>
+        <div class="img-container">
+            <img src="https://www.eveningwater.com/my-web-projects/react/1/audioImages/baixiaobai.jpg" alt="music-cover" id="cover">
+        </div>
+        <div class="navigation">
+            <button type="button" class="action-btn" id="prev">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button type="button" class="action-btn action-btn-big" id="play">
+                <i class="fas fa-play"></i>
+            </button>
+            <button type="button" class="action-btn" id="next">
+                <i class="fas fa-forward"></i>
+            </button>
+            <button type="button" class="action-btn" id="mode">
+                <i class="icon repeat-cycle"></i>
+            </button>
+            <button type="button" class="action-btn" id="open-music-list">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="music-list" class="music-list"></div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>  

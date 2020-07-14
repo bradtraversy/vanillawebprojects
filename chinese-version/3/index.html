@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放器</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <h1 class="title">视频播放器</h1>
+    <video name="media" poster="./images/poster.png" class="screen">
+        <source src="https://www.eveningwater.com/my-web-projects/js/3/gone.mp4" type="video/mp4">
+    </video>
+    <div class="controls">
+        <button class="play" id="play">
+            <i class="fa fa-play fa-2x"></i>
+        </button>
+        <button class="stop" id="stop">
+            <i class="fa fa-stop fa-2x"></i>
+        </button>
+        <div class="progress" id="progress">
+            <div class="progress-item"></div>
+            <div class="progress-thumb"></div>
+        </div>
+        <span class="time" id="time">00:00</span>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

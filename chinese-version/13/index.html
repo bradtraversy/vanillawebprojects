@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语音文字阅读器</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>语音文字阅读器</h1>
+        <button id="toggle-box" class="btn btn-toggle" type="button">阅读输入文本</button>
+        <div id="box" class="box">
+            <h3>选择语音的语言类型:</h3>
+            <div class="select-container select-voices">
+                <div class="select-title">
+                    <div class="select-content" tabindex="0" hidefocus="true"></div>
+                    <i class="select-icon select-down"></i>
+                </div>
+                <ul class="select-items"></ul>
+            </div>
+            <textarea class="read-content" id="read-content" placeholder="请输入要阅读的内容"></textarea>
+            <button id="read-btn" class="btn read-btn" type="button">阅读</button>
+            <span class="close-box-btn" id="close-box-btn">&times;</span>
+        </div>
+        <main id="main" class="main"></main>
+    </div>
+</body>
+<script src="plugins/message.js"></script>
+<script src="index.js"></script>
+</html>

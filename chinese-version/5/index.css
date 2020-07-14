@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px "微软雅黑", "楷体";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f3f5;
+}
+.container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 800px;
+  padding: 20px;
+}
+.container aside {
+  max-width: 200px;
+  padding: 10px 8px;
+  border-right: 1px solid #535353;
+}
+.container aside button {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #f2f3f4;
+  background-color: #ddeedd;
+  padding: 8px 7px;
+  font: 14px "幼圆";
+  border-radius: 5px;
+  color: #535353;
+  letter-spacing: 2px;
+  margin: 0.6em 0;
+  font-weight: bold;
+}
+.container aside button:hover {
+  transform: scale(1.1);
+}
+.container main {
+  flex: 1;
+  padding: 10px 8px;
+}
+.container main h2 {
+  display: flex;
+  justify-content: space-between;
+  color: #686769;
+  letter-spacing: 2px;
+  font-weight: 250;
+  border-bottom: 1px solid #665544;
+  margin: 0 0 20px;
+  padding-bottom: 15px;
+}
+.container main #main .person {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.container main #main .total-wealth {
+  color: #f30023;
+  font-weight: bold;
+  font-size: 18px;
+}

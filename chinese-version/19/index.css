@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f1a693;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #ffffff;
+}
+:root {
+  --border-color: #bfc1c4;
+  --background-color: #f3f4f5;
+  --text-color: #535353;
+}
+h1 {
+  margin: 0.2em 0;
+  letter-spacing: 2px;
+  font-family: "华文琥珀", "楷体";
+}
+p {
+  margin: 1em 0;
+  letter-spacing: 1px;
+}
+.draggle-list {
+  list-style: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+.draggle-list > li {
+  display: flex;
+  flex: 1;
+  background-color: #ffffff;
+}
+.draggle-list > li:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+.draggle-list > li > .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--background-color);
+  font-size: 30px;
+}
+.draggle-list > li > .draggable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  flex: 1;
+}
+.draggle-list > li > .draggable > .vegetable-name {
+  margin: 0 20px 0 0;
+}
+.draggle-list li.right .vegetable-name {
+  color: #3ae374;
+}
+
+.draggle-list li.wrong .vegetable-name {
+  color: #ff3838;
+}
+.check-btn {
+  background-color: var(--background-color);
+  padding: 10px 12px;
+  outline: none;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  color: var(--text-color);
+  border-radius: 5px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.check-btn:hover,
+.check-btn:active {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}

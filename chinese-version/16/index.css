@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+  color: #ffffff;
+  font-family: "华文琥珀", "楷体";
+  overflow: hidden;
+}
+.page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.slide-show,
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.slide-show {
+  z-index: -3;
+  overflow: hidden;
+}
+.slide-show .slide {
+  transform: scale(1.3);
+  animation: changeBackground 30s linear infinite;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  opacity: 0;
+}
+.slide-show .slide-1 {
+  background-image: url(./images/1.jpg);
+  animation-delay: 0s;
+}
+.slide-show .slide-2 {
+  background-image: url(./images/2.jpg);
+  animation-delay: 4s;
+}
+.slide-show .slide-3 {
+  background-image: url(./images/3.jpg);
+  animation-delay: 8s;
+}
+.slide-show .slide-4 {
+  background-image: url(./images/4.jpg);
+  animation-delay: 12s;
+}
+.slide-show .slide-5 {
+  background-image: url(./images/5.jpg);
+  animation-delay: 16s;
+}
+.container h1 {
+    margin: 1em 0;
+}
+.container .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  transform: scale(1);
+}
+
+.circle {
+  position: absolute;
+  background-color: #e75858;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom center;
+}
+.pointer-container .pointer {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+.content.grow {
+    animation: grow 3s linear forwards;
+}
+.content.shrink {
+    animation: shrink 3s linear forwards;
+}
+.gradient-circle {
+    background:conic-gradient(#55b76a 0%,#4ca45b 40%,#fff 40%,#fff 60%,#336d44 60%,#2a5b3e 100%);
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    z-index: -2;
+    border-radius: 50%;
+}
+#text {
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+@keyframes changeBackground {
+  10% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+    to{
+        transform: scale(1);
+    }
+}

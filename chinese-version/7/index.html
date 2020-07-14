@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜单词的双人游戏</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+    <h1>猜单词游戏</h1>
+    <p>找到隐藏的单词-请按下键盘的字母键</p>
+    <div class="prompt-container">
+        <button type="button" class="btn" id="seeConfirm">查看提示</button>
+        <p id="confirm-text"></p>
+    </div>
+    <div class="game-container">
+        <svg class="figure-container">
+            <!-- 绞刑架部分 -->
+            <!-- x1 属性在 x 轴定义线条的开始
+                y1 属性在 y 轴定义线条的开始
+                x2 属性在 x 轴定义线条的结束
+                y2 属性在 y 轴定义线条的结束 -->
+            <line x1="20" x2="100" y1="230" y2="230"></line>
+            <line x1="60" x2="60" y1="230" y2="20"></line>
+            <line x1="58" x2="140" y1="20" y2="20"></line>
+            <line x1="140" x2="140" y1="18" y2="45"></line>
+            <!-- 头部 -->
+            <!-- cx和cy属性定义圆点的x和y坐标。如果省略cx和cy，圆的中心会被设置为(0, 0)r属性定义圆的半径 -->
+            <circle r="20" cx="140" cy="65" class="figure-part"></circle>
+            <!-- 身体部分 -->
+            <line x1="140" x2="140" y1="85" y2="165" class="figure-part"></line>
+            <!-- 手臂部分-->
+            <line x1="110" x2="140" y1="90" y2="115" class="figure-part"></line>
+            <line x1="140" x2="170" y1="115" y2="90" class="figure-part"></line>
+            <!-- 腿部分 -->
+            <line x1="110" x2="140" y1="188" y2="164" class="figure-part"></line>
+            <line x1="140" x2="170" y1="164" y2="188" class="figure-part"></line>
+        </svg>
+        <div class="wrong-letters-container">
+            <div class="wrong-letters-content">
+                <p>错误的字母</p>
+                <div id="wrong-letters"></div>
+            </div>
+        </div>
+        <div class="word" id="word"></div>
+    </div>
+    <div id="keyboard">
+        <button type="button" id="openKeyboard" class="btn">开启虚拟键盘</button>
+        <div class="keyboard-container">
+
+        </div>
+    </div>
+</body>
+<script src="./plugins/popbox.js"></script>
+<script src="./plugins/message.js"></script>
+<script src="index.js"></script>
+
+</html>

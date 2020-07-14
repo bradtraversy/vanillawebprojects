@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient( 0deg, rgba(247, 247, 247, 1) 23.8%, rgb(99, 164, 238) 92%);
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    align-items: center;
+    justify-content: center;
+    color: #535353;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.music-container {
+    display: flex;
+    padding: 20px 1em;
+    margin: 120px 0;
+    box-shadow: 0 20px 20px rgba(100, 165, 240, 0.6);
+    border-radius: 15px;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.music-container.play>.music-info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.music-container.play>.img-container>img {
+    animation-play-state: running;
+}
+
+.music-container>.music-info {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: calc(100% - 40px);
+    position: absolute;
+    top: 0;
+    left: 20px;
+    padding: 10px 10px 10px 150px;
+    z-index: 0;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    opacity: 0;
+    transform: translateY(0%);
+}
+
+.music-container>.music-info>.progress-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 6px;
+    width: 100%;
+}
+
+.music-container>.music-info>.progress-container>.progress {
+    border-radius: 5px;
+    transition: width 0.1s linear;
+    height: 100%;
+    width: 0;
+    background-color: #2396ef;
+}
+
+.music-container>.img-container {
+    position: relative;
+    width: 110px;
+    cursor: pointer;
+}
+
+.music-container>.img-container:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translate(-50%, 50%);
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.music-container>.img-container>img {
+    object-fit: cover;
+    height: 110px;
+    width: inherit;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: rotate 3s infinite linear;
+    animation-play-state: paused;
+}
+
+.music-container>.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.music-container>.navigation>.action-btn {
+    outline: none;
+    background-color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border: 0;
+    margin: 0 0.4em;
+    color: #535353;
+}
+
+.music-container>.navigation>.action-btn:hover,
+.music-container>.navigation>.action-btn:active {
+    color: #9d9d9d;
+}
+
+.music-container>.navigation>.action-btn-big {
+    font-size: 30px;
+    color: #565656;
+}
+
+.music-container>.navigation>.action-btn .icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: url("https://www.eveningwater.com/my-web-projects/react/1/static/images/icons.png") no-repeat;
+    background-size: 32px auto;
+}
+
+.music-container>.navigation>.action-btn .icon.repeat-cycle {
+    background-position: 0 -160px;
+}
+
+.music-container>.navigation>.action-btn .icon.repeat-once {
+    background-position: 0 -128px;
+}
+
+.music-container>.navigation>.action-btn .icon.repeat-random {
+    background-position: 0 -192px;
+}
+
+.music-container>.music-list {
+    width: 20vw;
+    max-width: 250px;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 30px 30px rgba(247, 247, 247, 0.2);
+    border: 1px solid #f2f3f4;
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    display: none;
+    transition: transform 0.4s linear, display 0.4s linear;
+}
+
+.music-container>.music-list.show {
+    display: block;
+    transform: translateX(100%) translateY(-50%);
+}
+
+.music-container>.music-list>.music-item {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.music-container>.music-list>.music-item:hover,
+.music-container>.music-list>.music-item:active {
+    border-bottom: 2px dashed #535455;
+}
+
+.music-container>.music-list>.music-item>.singer-icon {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .music-container>.music-list.show {
+        top: 100%;
+        transform: translateY(0%) translateX(50%);
+        right: 50%;
+        width: 100%;
+        max-height: 200px;
+    }
+}

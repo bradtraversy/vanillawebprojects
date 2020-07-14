@@ -1,0 +1,206 @@
+/*
+*  选电影座位
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #232424;
+  color: #ffffff;
+  font: 16px "微软雅黑";
+}
+.movie-container {
+  margin: 20px 0;
+}
+.movie-container label,
+.movie-container .select-container {
+  vertical-align: middle;
+  display: inline-block;
+}
+.movie-container label {
+  text-align: right;
+}
+.select-container {
+  width: 260px;
+  position: relative;
+}
+
+.select-container > ul,
+.select-container > ul li {
+  list-style: none;
+}
+
+.select-container > .select-title {
+  position: relative;
+  width: 100%;
+}
+
+.select-container > .select-title > .select-content {
+  height: 38px;
+  border: 1px solid #e6e6e6;
+  background-color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 22px;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 38px;
+  outline: none;
+  color: #535353;
+}
+
+.select-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: dashed;
+  border-color: transparent;
+  overflow: hidden;
+}
+
+.select-container > .select-title > .select-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  cursor: pointer;
+  border-top-color: #c2c2c2;
+  border-top-style: solid;
+  transition: all 0.3s;
+  margin-top: -3px;
+}
+
+.select-container > .select-title > .select-up {
+  margin-top: -9px;
+  transform: rotate(180deg);
+}
+
+.select-container > .select-items {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  z-index: 899;
+  min-width: 100%;
+  border: 1px solid #d2d2d2;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  display: none;
+}
+
+.select-container > .select-items .select-option {
+  padding: 0 10px;
+  line-height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: 0.5s all;
+  background-color: #f2f2f2;
+  color: #535353;
+}
+
+.select-container > .select-items .search-input {
+  padding: 0 10px;
+  line-height: 36px;
+  outline: none;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.select-container > .select-items .select-option:hover {
+  background-color: #5fb878;
+  color: #fff;
+}
+
+.select-container > .select-items > .select-this {
+  background-color: #5fb878;
+  color: #fff;
+}
+
+.show-case {
+  background-color: rgba(0, 0, 0, 0.12);
+  padding: 7px 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  color: #fdf2f1;
+}
+.show-case > .show-case-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+.seat {
+  width: 25px;
+  height: 22px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #989796;
+  margin: 3px;
+}
+.seat.selected {
+  background-color: #bcdbf3;
+}
+.seat.occupied {
+  background-color: #f2f2f2;
+}
+.show-case > .show-case-item > i {
+  margin-left: 5px;
+  letter-spacing: 2px;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+.container > .screen {
+  width: 100%;
+  height: 100px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.8);
+  transform: rotateX(-45deg);
+  margin: 10px 0;
+}
+
+.container .row {
+  display: flex;
+}
+
+.container .row .seat:nth-of-type(2) {
+  margin-right: 26px;
+}
+.container .row .seat:nth-last-of-type(2) {
+  margin-left: 26px;
+}
+.container .row .seat:not(.occupied):hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.text {
+  margin: 0.4em;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.text span {
+  color: #e77272;
+  font-size: 18px;
+}

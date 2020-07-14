@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: YC;
+    src: url("./YCXiaoGongZhuTi-Regular.ttf") format("truetype");
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    font: 16px YC;
+    overflow: hidden;
+    background: url('./images/bg.jfif')no-repeat center/cover;
+}
+body * {
+    z-index: 1;
+}
+body:after {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+.year {
+    opacity: 0.2;
+    font-size: 100px;
+    z-index: -1;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h1 {
+    font-size: 60px;
+    margin: -100px 0 40px;
+}
+.count-down {
+    display: none;
+    transform: scale(1.2);
+}
+.count-down > .time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px;
+}
+.count-down > .time > h2 {
+    margin: 0 0 5px;
+    font-size: 1.6em;
+}
+.count-down > .time  i {
+    font-size: 25px;
+}

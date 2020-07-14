@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汇率计算器</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <img src="./images/money.png" alt="图片加载中" title="汇率计算器">
+    <h1>汇率计算器</h1>
+    <p>选择货币和金额以获取汇率。</p>
+    <div class="container">
+        <div class="currency">
+            <div class="select-container currency-one">
+                <div class="select-title">
+                    <div class="select-content" tabindex="0" hidefocus="true" data-value="USD">USD</div>
+                    <i class="select-icon select-down"></i>
+                </div>
+                <ul class="select-items">
+                </ul>
+            </div>
+            <input type="number" id="amount-number-one" class="amount-number" placeholder="0" value="1">
+        </div>
+        <div class="swap-rate-container">
+            <button class="swap-btn" id="swap">转换</button>
+            <div class="rate" id="rate"></div>
+        </div>
+        <div class="currency">
+            <div class="select-container currency-two">
+                <div class="select-title">
+                    <div class="select-content" tabindex="0" hidefocus="true" data-value="EUR">EUR</div>
+                    <i class="select-icon select-down"></i>
+                </div>
+                <ul class="select-items">
+                </ul>
+            </div>
+            <input type="number" id="amount-number-two" class="amount-number" placeholder="0" value="1" disabled>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

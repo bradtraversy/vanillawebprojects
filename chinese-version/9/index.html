@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>费用追踪器</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h2>费用追踪器</h2>
+    <div class="container">
+        <h4>你的余额:</h4>
+        <span id="balance">$0.00</span>
+        <div class="inc-cost-container">
+            <div class="money plus">
+                <h4>收入:</h4>
+                <p id="money-plus">$0.00</p>
+            </div>
+            <div class="money minus">
+                <h4>消费:</h4>
+                <p id="money-minus">$0.00</p>
+            </div>
+        </div>
+        <h3>历史收入与消费记录:</h3>
+        <ul id="list" class="list"></ul>
+        <h3>添加新收入或新消费:</h3>
+        <form id="form">
+            <div class="form-control">
+                <label>收入来源或者交易内容</label>
+                <input type="text" placeholder="请输入收入来源或者交易内容" id="text">
+            </div>
+            <div class="form-control">
+                <label>金额<br>(负数为消费，正数为收入)</label>
+                <input type="number" id="amount" placeholder="请输入金额">
+            </div>
+            <button class="sureBtn" type="button" id="sureBtn">确定添加</button>
+        </form>
+    </div>
+</body>
+<script src="plugins/message.js"></script>
+<script src="index.js"></script>
+
+</html>

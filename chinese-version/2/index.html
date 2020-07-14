@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选电影座位</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="movie-container">
+        <label>请选择电影:</label>
+        <div class="select-container">
+            <div class="select-title">
+                <div class="select-content" tabindex="0" hidefocus="true">复仇者联盟4：终局之战 ($10)</div>
+                <i class="select-icon select-down"></i>
+            </div>
+            <ul class="select-items">
+                <div class="select-option" data-value="10">复仇者联盟4：终局之战 ($10)</div>
+                <div class="select-option" data-value="12">小丑 ($12)</div>
+                <div class="select-option" data-value="8">玩具总动员4：($8)</div>
+                <div class="select-option" data-value="9">狮子王 ($9)</div>
+            </ul>
+        </div>
+    </div>
+    <div class="show-case">
+        <div class="show-case-item">
+            <div class="seat"></div>
+            <i>可选座位</i>
+        </div>
+        <div class="show-case-item">
+            <div class="seat selected"></div>
+            <i>选择座位</i>
+        </div>
+        <div class="show-case-item">
+            <div class="seat occupied"></div>
+            <i>已选座位</i>
+        </div>
+    </div>
+    <div class="container">
+        <div class="screen"></div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+    </div>
+    <p class="text">你当前选中了<span id="seat-total-count">0</span>个座位,价格一共为$<span id="seat-total-price">0</span>。</p>
+</body>
+<script src="index.js"></script>
+
+</html>

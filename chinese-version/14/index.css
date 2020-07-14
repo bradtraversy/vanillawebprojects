@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f2f3f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100vh;
+    flex-direction: column;
+}
+.btn-none {
+    border:none;
+    background-color: transparent;
+    outline: none;
+}
+.btn {
+    outline: none;
+    padding: 10px 12px;
+    display: inline-block;
+    border-radius: 5px;
+    border:1px solid #f1f4f5;
+    background-color: #ffffff;
+    color: #535353;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn.btn-small {
+    font-size: 14px;
+    padding: 6px 8px;
+}
+.btn:hover,.btn:active {
+    background-color: #f9f9f9;
+    border-color: #f5f6f7;
+    color: #555555;
+}
+.btn-group {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.btn-group > .delete-cards-btn {
+    display: none;
+    transition: display .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+h1 {
+    position: relative;
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+    font-family: "幼圆","楷体";
+    line-height: 1.5;
+}
+h1 > .add-cards-btn {
+    position: relative;
+    top: -5px;
+}
+.add-card-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform .1s cubic-bezier(0.6, -0.28, 0.735, 0.045),display .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: #fefefe;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #555657;
+    transform: translateY(-100%);
+}
+.add-card-container.show {
+    display: flex;
+    transform: translateY(0);
+}
+.add-card-container > h1 {
+    margin-bottom: 10px;
+}
+.add-card-container > h1 > .close-addCards-btn {
+    position: absolute;
+    right: -2em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    cursor: pointer;
+    transition: font-size .1s linear;
+}
+.add-card-container > h1 > .close-addCards-btn:hover,
+.add-card-container > h1 > .close-addCards-btn:active {
+    font-size: 18px;
+}
+.add-card-container > .add-new-card-form {
+    width: 25vw;
+    max-width: 600px;
+    padding: 20px;
+}
+.add-card-container > .add-new-card-form > div {
+    margin-bottom: 20px;
+}
+.add-card-container > .add-new-card-form > div:last-of-type {
+    text-align: center;
+}
+.add-card-container > .add-new-card-form > div > label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.add-card-container > .add-new-card-form > div > .ew-input,
+.add-card-container > .add-new-card-form > div > .ew-textarea {
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border:1px solid #e2e2e2;
+    font-size: 16px;
+    font-family: "微软雅黑","楷体";
+    width: 100%;
+}
+.add-card-container > .add-new-card-form > div > .ew-input {
+    padding: 8px 18px;
+}
+.add-card-container > .add-new-card-form > div > .ew-textarea {
+    padding: 8px 18px;
+    min-height: 150px;
+}
+.cards-container {
+    perspective: 1000px;
+    position: relative;
+    width: 35vw;
+    max-width: 600px;
+    height: 400px;
+}
+.cards-container > .card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    transform: translateX(-50%) rotateY(10deg);
+    font-size: 1.2em;
+}
+.cards-container > .card > .number {
+    border-radius: 50%;
+    box-shadow: 0 -3px 6px rgba(246,247,249,.24);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    z-index: 100;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.cards-container > .card > .check-card-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 100;
+    color: #535455;
+    font-size: 20px;
+    cursor: pointer;
+}
+.cards-container > .card > .check-card-btn > .checked-icon {
+    border:1px solid #a1a1a1;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 1px;
+    color: #535353;
+    background-color: #fff;
+}
+.cards-container > .card > .check-card-btn > .checked-icon:after {
+    content:"";
+}
+.cards-container > .card > .check-card-btn > .checked-icon.checked:after {
+    content:"√";
+    position: relative;
+    left: -2px;
+}
+.cards-container > .card.active {
+    cursor: pointer;
+    opacity: 1;
+    transform: rotateX(0deg) translateX(0);
+    z-index: 10;
+}
+.cards-container > .card.active.show-card-content > .inner-card{
+    transform: rotateX(180deg);
+}
+.cards-container > .card > .inner-card {
+    transform-style: preserve-3d;
+    position: relative;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 -2px 6px rgba(0,0,0,.24);
+    transition: transform .3s ease;
+}
+.cards-container > .card > .inner-card > .inner-card-front,
+.cards-container > .card > .inner-card > .inner-card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555657;
+    background-color: #ffffff;
+    letter-spacing: 2px;
+    font-family: "华文琥珀","楷体";
+    border-radius: 5px;
+}
+.cards-container > .card > .inner-card > .inner-card-front:after,
+.cards-container > .card > .inner-card > .inner-card-back:after {
+    content: "\f021  翻转";
+    font-family: 'Font Awesome 5 Free', Lato, sans-serif;
+    color: #dedede;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.cards-container > .card > .inner-card > .inner-card-front {
+    z-index: 2;
+    transform: rotateX(0deg);
+}
+.cards-container > .card > .inner-card > .inner-card-back {
+    transform: rotateX(180deg);
+}
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+    margin-top: 25px;
+}
+.navigation > button {
+    cursor: pointer;
+}
+.navigation > button:hover,.navigation > button:active {
+    color: #989899;
+}
+.navigation > p {
+    margin: 0 25px;
+}

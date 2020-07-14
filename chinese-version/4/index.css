@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #f3f4f5;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  overflow: hidden;
+}
+img {
+  width: 200px;
+}
+:root {
+  --primary-color: #5fbba7;
+}
+
+h1 {
+  color: var(--primary-color);
+  letter-spacing: 2px;
+  margin: 0.2em 0;
+}
+p {
+  text-align: center;
+}
+.select-container {
+  width: 80px;
+  position: relative;
+}
+
+.select-container > ul,
+.select-container > ul li {
+  list-style: none;
+}
+
+.select-container > .select-title {
+  position: relative;
+  width: 100%;
+}
+
+.select-container > .select-title > .select-content {
+  height: 38px;
+  border: 1px solid #e6e6e6;
+  background-color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 22px;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 38px;
+  outline: none;
+  color: #535353;
+}
+
+.select-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: dashed;
+  border-color: transparent;
+  overflow: hidden;
+}
+
+.select-container > .select-title > .select-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  cursor: pointer;
+  border-top-color: #c2c2c2;
+  border-top-style: solid;
+  transition: all 0.3s;
+  margin-top: -3px;
+}
+
+.select-container > .select-title > .select-up {
+  margin-top: -9px;
+  transform: rotate(180deg);
+}
+
+.select-container > .select-items {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  z-index: 899;
+  min-width: 100%;
+  border: 1px solid #d2d2d2;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  display: none;
+}
+
+.select-container > .select-items .select-option {
+  padding: 0 10px;
+  line-height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: 0.5s all;
+  background-color: #f2f2f2;
+  color: #535353;
+}
+
+.select-container > .select-items .search-input {
+  padding: 0 10px;
+  line-height: 36px;
+  outline: none;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.select-container > .select-items .select-option:hover {
+  background-color: #5fb878;
+  color: #fff;
+}
+
+.select-container > .select-items > .select-this {
+  background-color: #5fb878;
+  color: #fff;
+}
+.container{
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container .swap-rate-container,
+.container .currency {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .currency {
+  padding: 40px 0;
+}
+.container .currency .amount-number {
+  width: calc(100% - 80px);
+  border: none;
+  background-color: transparent;
+  font-size: 32px;
+  text-align: right;
+  outline: none;
+}
+.container .swap-btn {
+  color: #ffffff;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  outline: none;
+  border: 1px solid #f2f3f4;
+}
+.container .swap-btn:hover {
+  opacity: 0.8;
+}
+.container .rate {
+  color: var(--primary-color);
+  font-size: 14px;
+  padding: 10px 0;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
