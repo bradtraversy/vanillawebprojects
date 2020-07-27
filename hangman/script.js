@@ -119,7 +119,7 @@ playAgainBtn.addEventListener('click', () => {
 
 	displayWord();
 
-	updateWrongLettersEl();
+	finalMessageRevealWord.innerText = "";
 
 	popup.style.display = 'none';
 });
