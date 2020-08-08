@@ -30,12 +30,12 @@ function checkEmail(input) {
 
 // Check required fields
 function checkRequired(inputArr) {
-  let isRequired = false;
+  let isRequired = true;
   inputArr.forEach(function(input) {
     if (input.value.trim() === '') {
       showError(input, `${getFieldName(input)} is required`);
-      isRequired = true;
     } else {
+      isRequired = false;
       showSuccess(input);
     }
   });
