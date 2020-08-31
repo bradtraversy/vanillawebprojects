@@ -22,9 +22,15 @@ const isValidEmail = (email) => {
 }
 
 const checkRequired = (inpurArr) => {
-  inpurArr.forEach((input) => {
-
+  inputArr.forEach((input) => {
+    if (input.value.trim() === '') {
+      showError(input, `${getFieldName(input)} is required`)
+    }
   })
+}
+
+const getFieldName = (input) => {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
 form.addEventListener('submit', function(e) {
