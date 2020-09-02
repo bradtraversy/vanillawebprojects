@@ -34,7 +34,7 @@ const checkRequired = (inputArr) => {
     }
   })
 }
-
+// uppercase first letter and concat field name
 const getFieldName = (input) => {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
@@ -64,6 +64,8 @@ form.addEventListener('submit', function(e) {
   checkEmail(email);
   checkPasswordsMatch(password, password2);
 
+});
+
   // if (username.value === '') {
   //   showError(username, 'Username is required');
   // } else {
@@ -89,7 +91,7 @@ form.addEventListener('submit', function(e) {
   // } else {
   //   showSuccess(password2);
   // }
-});
+
 
 // const form = document.getElementById('form');
 // const username = document.getElementById('username');
