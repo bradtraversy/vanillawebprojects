@@ -18,7 +18,7 @@ function updateCountdown() {
   const currentTime = new Date();
   const diff = newYearTime - currentTime;
 
-  if(diff==0){
+  if(diff==10){
     mp=document.getElementById('player');
     mp.loop=true;
     mp.load();
