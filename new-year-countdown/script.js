@@ -18,6 +18,12 @@ function updateCountdown() {
   const currentTime = new Date();
   const diff = newYearTime - currentTime;
 
+  if(diff==0){
+    mp=document.getElementById('player');
+    mp.loop=true;
+    mp.load();
+  }
+
   const d = Math.floor(diff / 1000 / 60 / 60 / 24);
   const h = Math.floor(diff / 1000 / 60 / 60) % 24;
   const m = Math.floor(diff / 1000 / 60) % 60;
@@ -30,6 +36,8 @@ function updateCountdown() {
   seconds.innerHTML = s < 10 ? '0' + s : s;
 }
 
+
+
 // Show spinner before countdown
 setTimeout(() => {
   loading.remove();
@@ -38,3 +46,4 @@ setTimeout(() => {
 
 // Run every second
 setInterval(updateCountdown, 1000);
+
