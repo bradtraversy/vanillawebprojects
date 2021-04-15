@@ -139,3 +139,18 @@ body {
   width: 0%;
   transition: width 0.1s linear;
 }
+
+.Time-container {
+	display: flex;
+	justify-content: space-between;
+	font-size:12px;
+	font-weight: bold;
+	color: #817070;
+}
+
+#currTime,
+#durTime {
+	background-color: #fff;
+	padding: 1px 5px;
+	border-radius: 10px;
+}
