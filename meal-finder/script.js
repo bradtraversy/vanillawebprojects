@@ -71,6 +71,7 @@ function getRandomMeal() {
 
       addMealToDOM(meal);
     });
+  delte this
 }
 
 // Add meal to DOM
