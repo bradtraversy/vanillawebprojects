@@ -24,8 +24,14 @@ let transactions =
 function addTransaction(e) {
   e.preventDefault();
 
-  if (text.value.trim() === '' || amount.value.trim() === '') {
-    alert('Please add a text and amount');
+  if(text.value.trim() !== "" && amount.value.trim() === ""){
+    alert("Please add amount");
+  }
+  else if(text.value.trim() === "" && amount.value.trim() !== ""){
+    alert('Please add a text');
+  }
+  else if(text.value.trim() === '' && amount.value.trim() === ''){
+    alert("Please add a text and amount")
   } else {
     const transaction = {
       id: generateID(),
