@@ -33,6 +33,7 @@ body {
 .img-container {
   position: relative;
   width: 110px;
+  height: 55px;
 }
 
 .img-container::after {
