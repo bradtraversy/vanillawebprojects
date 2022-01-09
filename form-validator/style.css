@@ -93,3 +93,9 @@ h2 {
   margin-top: 20px;
   width: 100%;
 }
+
+button:hover {
+  transition: ease-in 0.2s;
+  background: #fff;
+  color: #3498db;
+}
