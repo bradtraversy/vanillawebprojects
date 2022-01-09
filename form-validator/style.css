@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: #f9fafb;
+  /* background-color: #f9fafb; */
+  background-color: hsl(205, 100%, 96%);
   font-family: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
@@ -29,6 +30,16 @@ body {
 h2 {
   text-align: center;
   margin: 0 0 20px;
+}
+
+/* underline effect in read color after heading */
+.underline {
+  background-color: #e74c3c;
+  height: 0.589vh;
+  width: 14vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 .form {
