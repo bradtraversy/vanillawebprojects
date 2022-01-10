@@ -111,7 +111,7 @@ submit.addEventListener('submit', searchMeal);
 random.addEventListener('click', getRandomMeal);
 
 mealsEl.addEventListener('click', e => {
-  const mealInfo = e.path.find(item => {
+  const mealInfo = e.composedPath().find(item => {
     if (item.classList) {
       return item.classList.contains('meal-info');
     } else {
