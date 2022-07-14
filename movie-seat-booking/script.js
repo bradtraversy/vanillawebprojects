@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
+const seatsword = document.getElementById('seats');
 const movieSelect = document.getElementById('movie');
 
 populateUI();
@@ -26,6 +27,13 @@ function updateSelectedCount() {
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
+  if (selectedSeatsCount == 1) {
+    seatsword.innerText = "seat"
+  }
+  else
+  {
+    seatsword.innerText = "seats"
+  }
   
   setMovieData(movieSelect.selectedIndex, movieSelect.value);
 }
