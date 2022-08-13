@@ -26,7 +26,7 @@ async function getRandomUser() {
   addData(newUser);
 }
 
-// Double eveyones money
+// Double everyone's money
 function doubleMoney() {
   data = data.map(user => {
     return { ...user, money: user.money * 2 };
