@@ -15,6 +15,22 @@ color: #6feaf6;
   font-size: 16px;
 }
 
-body {
+
+body
+{
   font-family: 'Lato', sans-serif;
+  background-color: #242333;
+  color: #fff;
+  min-height: 100vh;
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container-1
+{
+  width: 300px;
+  height: 300px;
+  background-color: #02f;
 }
