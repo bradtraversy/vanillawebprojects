@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,500,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato:300,500,700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 h1 {
@@ -123,8 +123,8 @@ h1 button {
 
 .inner-card-front::after,
 .inner-card-back::after {
-  content: '\f021  Flip';
-  font-family: 'Font Awesome 5 Free', Lato, sans-serif;
+  content: "\f021  Flip";
+  font-family: "Font Awesome 5 Free", Lato, sans-serif;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -187,4 +187,5 @@ h1 button {
   padding: 12px;
   min-width: 500px;
   max-width: 100%;
+  resize: none;
 }
