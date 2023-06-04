@@ -2,20 +2,30 @@ const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
+const modeBtn = document.getElementById('mode');
 
 const audio = document.getElementById('audio');
 const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
-const currTime = document.querySelector('#currTime');
-const durTime = document.querySelector('#durTime');
+// const currTime = document.querySelector('#currTime');
+// const durTime = document.querySelector('#durTime');
+const currTime = document.getElementById('currTime');
+const durTime = document.getElementById('durTime')
 
 // Song titles
 const songs = ['hey', 'summer', 'ukulele'];
 
 // Keep track of song
 let songIndex = 2;
+
+// Play Modes
+const modes = ['single loop', 'random', 'sequential']
+const modeIcons = ['fa-redo', 'fa-random', 'fa-list']
+
+// Keep track of mode
+let modeIndex = 2
 
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
@@ -46,29 +56,48 @@ function pauseSong() {
 }
 
 // Previous song
-function prevSong() {
-  songIndex--;
-
-  if (songIndex < 0) {
-    songIndex = songs.length - 1;
+function prevSong(e) {
+  if (modes[modeIndex] === 'random') {
+	songIndex = Math.floor(Math.random()* songs.length)
   }
-
+  else{
+	songIndex--;
+	if (songIndex < 0) {
+		songIndex = songs.length - 1;
+	}
+  }
   loadSong(songs[songIndex]);
 
   playSong();
 }
 
 // Next song
-function nextSong() {
-  songIndex++;
-
-  if (songIndex > songs.length - 1) {
-    songIndex = 0;
+function nextSong(e) {
+  if (modes[modeIndex] === 'random') {
+	songIndex = Math.floor(Math.random()* songs.length)
   }
 
+  else if (modes[modeIndex] === 'sequential'||(modes[modeIndex] === 'single loop' && e.type === 'click')) {
+    songIndex++;
+  
+    if (songIndex > songs.length - 1) {
+      songIndex = 0;
+    }
+  }
   loadSong(songs[songIndex]);
 
   playSong();
+}
+
+// Switch model
+function switchMode() {
+  const icon = modeBtn.querySelector('i');
+  icon.classList.remove(modeIcons[modeIndex]);
+  modeIndex++;
+  if (modeIndex > modes.length - 1) {
+    modeIndex = 0;
+  }
+  icon.classList.add(modeIcons[modeIndex]);
 }
 
 // Update progress bar
@@ -115,7 +144,6 @@ function DurTime (e) {
 	} 
 
 	get_sec (currentTime,sec);
-
 	// change currentTime DOM
 	currTime.innerHTML = min +':'+ sec;
 
@@ -147,7 +175,6 @@ function DurTime (e) {
 
 	// change duration DOM
 	durTime.innerHTML = min_d +':'+ sec_d;
-		
 };
 
 // Event listeners
@@ -164,6 +191,7 @@ playBtn.addEventListener('click', () => {
 // Change song
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
+modeBtn.addEventListener('click', switchMode);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);

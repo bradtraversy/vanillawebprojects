@@ -132,6 +132,12 @@ body {
   width: 100%;
 }
 
+.timebar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 .progress {
   background-color: #fe8daa;
   border-radius: 5px;

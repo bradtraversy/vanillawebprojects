@@ -17,6 +17,9 @@
     <div class="music-container" id="music-container">
       <div class="music-info">
         <h4 id="title"></h4>
+        <div class="timebar" id="timebar">
+          <span id="currTime"></span>/<span id="durTime"></span>
+        </div>
         <div class="progress-container" id="progress-container">
           <div class="progress" id="progress"></div>
         </div>
@@ -28,6 +31,9 @@
         <img src="images/ukulele.jpg" alt="music-cover" id="cover" />
       </div>
       <div class="navigation">
+        <button id="mode" class="action-btn">
+          <i class="fas fa-list"></i>
+        </button>
         <button id="prev" class="action-btn">
           <i class="fas fa-backward"></i>
         </button>
