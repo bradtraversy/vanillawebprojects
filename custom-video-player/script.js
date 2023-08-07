@@ -2,7 +2,7 @@ const video = document.getElementById('video');
 const play = document.getElementById('play');
 const stop = document.getElementById('stop');
 const progress = document.getElementById('progress');
-const timestamp = document.getElementById('timestamp');
+const timeStamp = document.getElementById('timestamp');
 
 // Play & pause video
 function toggleVideoStatus() {
@@ -38,7 +38,7 @@ function updateProgress() {
     secs = '0' + String(secs);
   }
 
-  timestamp.innerHTML = `${mins}:${secs}`;
+  timeStamp.innerHTML = `${mins}:${secs}`;
 }
 
 // Set video time to progress
