@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -10,12 +12,12 @@ body {
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  margin: 0;
 }
 
 h1 {
   font-size: 45px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
 canvas {
@@ -26,23 +28,27 @@ canvas {
 
 .btn {
   cursor: pointer;
-  border: 0;
   padding: 10px 20px;
-  background: #000;
+  background: linear-gradient(135deg, #ffd700, #ffa500); /* Gradient background */
   color: #fff;
-  border-radius: 5px;
-}
-
-.btn:focus {
-  outline: 0;
+  border: none;
+  border-radius: 25px; /* Rounded border */
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-  background: #222;
+  background: linear-gradient(135deg, #ffa500, #ffd700); /* Change gradient on hover */
+  transform: scale(1.05); /* Apply a slight scale transformation on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
   transform: scale(0.98);
+  box-shadow: none;
 }
 
 .rules-btn {
@@ -68,3 +74,36 @@ canvas {
 .rules.show {
   transform: translateX(0);
 }
+
+.rules-heading {
+  font-size: 28px; /* Increase font size for better emphasis */
+  margin-bottom: 15px; /* Increase margin for better separation from content */
+  color: #ffa500; /* Use an orange color for the heading */
+  font-weight: bold; /* Apply a bold font weight for emphasis */
+  text-transform: uppercase; /* Convert text to uppercase for a stylish effect */
+}
+
+.rules-content,
+.rules-content2 {
+  font-size: 18px; /* Increase font size for better readability */
+  line-height: 1.5; /* Adjust line height for comfortable spacing */
+  margin-bottom: 15px; /* Increase margin for better separation between paragraphs */
+  color: #ccc; /* Use a subtle gray color for the text */
+}
+
+.rules-content2 {
+  font-style: italic; /* Apply italic font style to differentiate */
+}
+
+#close-btn {
+  background: #222;
+  color: #fff;
+  margin-top: 15px;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+#close-btn:hover {
+  background: #444; /* Change the background color on hover */
+}
+
+
