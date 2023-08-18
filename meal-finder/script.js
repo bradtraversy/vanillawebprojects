@@ -18,17 +18,18 @@ function searchMeal(e) {
   // Check for empty
   if (term.trim()) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         resultHeading.innerHTML = `<h2>Search results for '${term}':</h2>`;
 
         if (data.meals === null) {
           resultHeading.innerHTML = `<p>There are no search results. Try again!<p>`;
+          mealsEl.innerHTML = '';
         } else {
           mealsEl.innerHTML = data.meals
             .map(
-              meal => `
+              (meal) => `
             <div class="meal">
               <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
               <div class="meal-info" data-mealID="${meal.idMeal}">
@@ -50,8 +51,8 @@ function searchMeal(e) {
 // Fetch meal by ID
 function getMealById(mealID) {
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       const meal = data.meals[0];
 
       addMealToDOM(meal);
@@ -65,8 +66,8 @@ function getRandomMeal() {
   resultHeading.innerHTML = '';
 
   fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       const meal = data.meals[0];
 
       addMealToDOM(meal);
@@ -99,7 +100,7 @@ function addMealToDOM(meal) {
         <p>${meal.strInstructions}</p>
         <h2>Ingredients</h2>
         <ul>
-          ${ingredients.map(ing => `<li>${ing}</li>`).join('')}
+          ${ingredients.map((ing) => `<li>${ing}</li>`).join('')}
         </ul>
       </div>
     </div>
@@ -110,8 +111,8 @@ function addMealToDOM(meal) {
 submit.addEventListener('submit', searchMeal);
 random.addEventListener('click', getRandomMeal);
 
-mealsEl.addEventListener('click', e => {
-  const mealInfo = e.composedPath().find(item => {
+mealsEl.addEventListener('click', (e) => {
+  const mealInfo = e.composedPath().find((item) => {
     if (item.classList) {
       return item.classList.contains('meal-info');
     } else {
