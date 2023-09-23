@@ -84,27 +84,26 @@ function showNotification() {
 // Keydown letter press
 window.addEventListener('keydown', e => {
 	if (playable) {
-		if (e.keyCode >= 65 && e.keyCode <= 90) {
-			const letter = e.key.toLowerCase();
-
+		if (/^[a-zA-Z]$/.test(e.key)) {
+			const letter = e.key;
+		
 			if (selectedWord.includes(letter)) {
-				if (!correctLetters.includes(letter)) {
-					correctLetters.push(letter);
-
-					displayWord();
-				} else {
-					showNotification();
-				}
+			  if (!correctLetters.includes(letter)) {
+				correctLetters.push(letter);
+		
+				displayWord();
+			  } else {
+				showNotification();
+			  }
 			} else {
-				if (!wrongLetters.includes(letter)) {
-					wrongLetters.push(letter);
-
-					updateWrongLettersEl();
-				} else {
-					showNotification();
-				}
+			  if (!wrongLetters.includes(letter)) {
+				wrongLetters.push(letter);
+				updateWrongLettersEl();
+			  } else {
+				showNotification();
+			  }
 			}
-		}
+		  }
 	}
 });
 
