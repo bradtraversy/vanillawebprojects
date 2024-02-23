@@ -2,8 +2,8 @@
 
 This is the main repository for all of the projects in the course.
 
-- [Course Link](https://www.udemy.com/course/web-projects-with-vanilla-javascript/?referralCode=F9B7C7FED834F91ADE75)
-- [Course Info Website](https://vanillawebprojects.com)
+- [Course Link](https://www.traversymedia.com/20-Vanilla-JavaScript-Projects)
+- [Get Course On Udemy](https://www.udemy.com/course/web-projects-with-vanilla-javascript/?referralCode=F9B7C7FED834F91ADE75)
 
 |  #  |            Project             | Live Demo |
 | :-: | :----------------------------: | :-------: |
