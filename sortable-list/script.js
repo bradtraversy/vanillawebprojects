@@ -1,5 +1,5 @@
-const draggable_list = document.getElementById('draggable-list');
-const check = document.getElementById('check');
+const draggableList = document.getElementById('draggable-list');
+const checkButton = document.getElementById('check');
 
 const richestPeople = [
   'Jeff Bezos',
@@ -11,108 +11,81 @@ const richestPeople = [
   'Larry Ellison',
   'Mark Zuckerberg',
   'Michael Bloomberg',
-  'Larry Page'
+  'Larry Page',
 ];
 
-// Store listitems
-const listItems = [];
+let dragStartIndex = null;
 
-let dragStartIndex;
-
-createList();
-
-// Insert list items into DOM
+// Cria a lista embaralhada e insere no DOM
 function createList() {
-  [...richestPeople]
-    .map(a => ({ value: a, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(a => a.value)
-    .forEach((person, index) => {
-      const listItem = document.createElement('li');
+  const shuffledPeople = richestPeople
+    .map((person) => ({ name: person, order: Math.random() }))
+    .sort((a, b) => a.order - b.order)
+    .map((item) => item.name);
 
-      listItem.setAttribute('data-index', index);
+  const fragment = document.createDocumentFragment();
 
-      listItem.innerHTML = `
-        <span class="number">${index + 1}</span>
-        <div class="draggable" draggable="true">
-          <p class="person-name">${person}</p>
-          <i class="fas fa-grip-lines"></i>
-        </div>
-      `;
+  shuffledPeople.forEach((person, index) => {
+    const listItem = document.createElement('li');
+    listItem.dataset.index = index;
+    listItem.innerHTML = `
+      <span class="number">${index + 1}</span>
+      <div class="draggable" draggable="true">
+        <p class="person-name">${person}</p>
+        <i class="fas fa-grip-lines"></i>
+      </div>
+    `;
+    fragment.appendChild(listItem);
+  });
 
-      listItems.push(listItem);
-
-      draggable_list.appendChild(listItem);
-    });
-
+  draggableList.appendChild(fragment);
   addEventListeners();
 }
 
-function dragStart() {
-  // console.log('Event: ', 'dragstart');
-  dragStartIndex = +this.closest('li').getAttribute('data-index');
-}
-
-function dragEnter() {
-  // console.log('Event: ', 'dragenter');
-  this.classList.add('over');
-}
-
-function dragLeave() {
-  // console.log('Event: ', 'dragleave');
-  this.classList.remove('over');
-}
-
-function dragOver(e) {
-  // console.log('Event: ', 'dragover');
-  e.preventDefault();
-}
-
-function dragDrop() {
-  // console.log('Event: ', 'drop');
-  const dragEndIndex = +this.getAttribute('data-index');
-  swapItems(dragStartIndex, dragEndIndex);
-
-  this.classList.remove('over');
-}
-
-// Swap list items that are drag and drop
+// Troca dois itens de lugar no DOM
 function swapItems(fromIndex, toIndex) {
-  const itemOne = listItems[fromIndex].querySelector('.draggable');
-  const itemTwo = listItems[toIndex].querySelector('.draggable');
+  const items = document.querySelectorAll('.draggable-list li');
+  const itemOne = items[fromIndex].querySelector('.draggable');
+  const itemTwo = items[toIndex].querySelector('.draggable');
 
-  listItems[fromIndex].appendChild(itemTwo);
-  listItems[toIndex].appendChild(itemOne);
+  items[fromIndex].appendChild(itemTwo);
+  items[toIndex].appendChild(itemOne);
 }
 
-// Check the order of list items
+// Verifica a ordem dos itens
 function checkOrder() {
-  listItems.forEach((listItem, index) => {
-    const personName = listItem.querySelector('.draggable').innerText.trim();
+  const items = document.querySelectorAll('.draggable-list li');
 
-    if (personName !== richestPeople[index]) {
-      listItem.classList.add('wrong');
-    } else {
-      listItem.classList.remove('wrong');
-      listItem.classList.add('right');
-    }
+  items.forEach((item, index) => {
+    const personName = item.querySelector('.person-name').textContent.trim();
+    item.classList.toggle('right', personName === richestPeople[index]);
+    item.classList.toggle('wrong', personName !== richestPeople[index]);
   });
 }
 
+// Adiciona os eventos de drag and drop
 function addEventListeners() {
   const draggables = document.querySelectorAll('.draggable');
-  const dragListItems = document.querySelectorAll('.draggable-list li');
+  const listItems = document.querySelectorAll('.draggable-list li');
 
-  draggables.forEach(draggable => {
-    draggable.addEventListener('dragstart', dragStart);
+  draggables.forEach((draggable) => {
+    draggable.addEventListener('dragstart', () => {
+      dragStartIndex = +draggable.closest('li').dataset.index;
+    });
   });
 
-  dragListItems.forEach(item => {
-    item.addEventListener('dragover', dragOver);
-    item.addEventListener('drop', dragDrop);
-    item.addEventListener('dragenter', dragEnter);
-    item.addEventListener('dragleave', dragLeave);
+  listItems.forEach((item) => {
+    item.addEventListener('dragover', (e) => e.preventDefault());
+    item.addEventListener('drop', () => {
+      const dragEndIndex = +item.dataset.index;
+      swapItems(dragStartIndex, dragEndIndex);
+      item.classList.remove('over');
+    });
+    item.addEventListener('dragenter', () => item.classList.add('over'));
+    item.addEventListener('dragleave', () => item.classList.remove('over'));
   });
 }
 
-check.addEventListener('click', checkOrder);
+// Inicialização
+createList();
+checkButton.addEventListener('click', checkOrder);
