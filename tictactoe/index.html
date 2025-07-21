@@ -3,9 +3,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Tic Tac Toe</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+	<div id="title"><h1><span>Tic</span> Tac <span>Toe</span></h1></div>
+	<div id="middle">
+		<div class="game">
+			<button id="1" onclick="pressed(1)"></button>
+			<button id="2" onclick="pressed(2)"></button>
+			<button id="3" onclick="pressed(3)"></button>
+			<button id="4" onclick="pressed(4)"></button>
+			<button id="5" onclick="pressed(5)"></button>
+			<button id="6" onclick="pressed(6)"></button>
+			<button id="7" onclick="pressed(7)"></button>
+			<button id="8" onclick="pressed(8)"></button>
+			<button id="9" onclick="pressed(9)"></button>
+		</div>
+		<button id="restart" onclick="changeStartTurn()">Restart</button>
+	</div>
+	<script src="script.js"></script>
 </body>
 </html>
