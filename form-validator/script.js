@@ -20,13 +20,23 @@ function showSuccess(input) {
 
 // Check email is valid
 function checkEmail(input) {
+  const email = input.value.trim();
+
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (re.test(input.value.trim())) {
-    showSuccess(input);
-  } else {
+
+  if (!re.test(email)) {
     showError(input, 'Email is not valid');
+    return;
   }
+
+  if (!email.endsWith(".com")) {
+    showError(input, 'Email must end with .com');
+    return;
+  }
+
+  showSuccess(input);
 }
+
 
 // Check required fields
 function checkRequired(inputArr) {
@@ -76,9 +86,10 @@ function getFieldName(input) {
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  if(checkRequired([username, email, password, password2])){
+  if(!checkRequired([username, email, password, password2])){
     checkLength(username, 3, 15);
     checkLength(password, 6, 25);
+    checkLength(password2, 6, 25);
     checkEmail(email);
     checkPasswordsMatch(password, password2);
   }
