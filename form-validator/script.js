@@ -60,11 +60,34 @@ function checkLength(input, min, max) {
   }
 }
 
+// show and hide password
+function hidePass() {
+  const buttons = document.querySelectorAll(".toggle-btn");
+  
+  buttons.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      // Find the input before this button
+      const inputPass = btn.previousElementSibling;
+      
+      if (inputPass.type === "password") {
+        inputPass.type = "text";
+        btn.textContent = "Hide";
+      } else {
+        inputPass.type = "password";
+        btn.textContent = "Show";
+      }
+    });
+  });
+}
+
+hidePass();
+
 // Check passwords match
 function checkPasswordsMatch(input1, input2) {
   if (input1.value !== input2.value) {
     showError(input2, 'Passwords do not match');
   }
+  
 }
 
 // Get fieldname
@@ -75,12 +98,28 @@ function getFieldName(input) {
 // Event listeners
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-
-  if(checkRequired([username, email, password, password2])){
-    checkLength(username, 3, 15);
-    checkLength(password, 6, 25);
-    checkEmail(email);
-    checkPasswordsMatch(password, password2);
+  
+  // Run all validations
+  checkRequired([username, email, password, password2]);
+  checkLength(username, 3, 15);
+  checkLength(password, 6, 25);
+  checkEmail(email);
+  checkPasswordsMatch(password, password2);
+  
+  // Check if there are any errors
+  const errors = document.querySelectorAll('.form-control.error');
+  
+  if (errors.length === 0) {
+    // No errors - all validations passed!
+    const submit = document.getElementById("submit");
+    submit.textContent = "Submitted successfully ✓";
+    submit.style.backgroundColor = "green";
+    
+    // Optional: Reset form after 2 seconds
+    setTimeout(function() {
+      form.reset();
+      submit.textContent = "Submit";
+      submit.style.backgroundColor = ""; // Reset to original color
+    }, 2000);
   }
-
 });
