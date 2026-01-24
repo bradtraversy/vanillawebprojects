@@ -32,7 +32,8 @@ h2 {
 }
 
 .form {
-  padding: 30px 40px;
+  padding: 10px 10px;
+
 }
 
 .form-control {
@@ -40,6 +41,8 @@ h2 {
   padding-bottom: 20px;
   position: relative;
 }
+
+
 
 .form-control label {
   color: #777;
@@ -54,6 +57,23 @@ h2 {
   width: 100%;
   padding: 10px;
   font-size: 14px;
+  position: relative;
+}
+
+.form-control .toggle-btn {
+  position: absolute;
+  right: 5px;
+  top: 32%;
+
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: black;
+
+  font-size: 11px;
+  width: 12%;
 }
 
 .form-control input:focus {
