@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="leftNav">
+            <p>MyWebsite</p>
+        </div>
+        <div class="rightNav">
+            <p class="home">Home</p>
+            <p class="about">About</p>
+            <p class="services">Services</p>
+            <p class="contact">Contact</p>
+        </div>
+    </nav>
+
+    <div class="main-con">
+        <h1>Welcome to MyWebsite</h1>
+        <p>Click on the button below to open to modal popup.</p>
+        <button class="btn" id="openBtn">Open Modal</button>
+    </div>
+    
+    <!-- Overlay container i.e. tapping anywhere outside modal will close the modal  -->
+    <div class="overlay"></div>
+
+    <div class="modal">
+        <h2>HELLO!</h2>
+        <p>This is a Simple modal popup</p>
+        <p>You can close me by clicking the button or pressing ESC.</p>
+        <button class="btn" id="closeBtn">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

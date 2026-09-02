@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: rgb(129, 129, 208);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.rightNav{
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.btn{
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    height: 30px;
+    width: 100px;
+    font-weight: bold;
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+.main-con{
+    background-color: blanchedalmond;
+   
+    height: 30vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+
+    z-index: 0;
+}
+
+.modal{
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 10px;
+
+    height: 30vh;
+    width: 500px;
+
+    z-index: 2;
+
+    top: 50%;
+    left: 50%;
+    position:fixed;
+
+    pointer-events: none;
+}
+
+.modal.show{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+
+    z-index: 1;
+
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+
+    position: fixed;
+    top: 0;
+    left:0;
+}
+
+.overlay.show{
+    opacity: 1;
+    pointer-events: auto;
+}
